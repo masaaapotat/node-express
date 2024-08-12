@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const campsiteRouter = require('./routes/campsiteRouter');
+const promotionRouter = require('./routes/promotionRouter');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -11,6 +12,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 // route path for the campsite data
 app.use('/campsites', campsiteRouter);
+app.use('/promotions', promotionRouter);
 // routing method to catch all http verbs
 
 // app.get('/campsites/:campsiteId', (req, res) => {
